@@ -26,16 +26,21 @@ public class MainActivityListFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
 
-        LocationData location = new LocationData("Set a new Location...");
-        locationData = new ArrayList<>();
-        locationData.add(location);
 
+        locationData = getListValues();
         locationAdapter = new LocationAdapter(getActivity(), locationData);
-
         setListAdapter(locationAdapter);
-
-
     }
+
+    public ArrayList<LocationData> getListValues(){
+        LocationData loc = new LocationData("Set a new Location...");
+        ArrayList<LocationData> locData = new ArrayList<>();
+        locData.add(loc);
+        locData.add(new LocationData("Puerto Mulege", -103.325068f, 20.698140f));
+        
+        return locData;
+    }
+
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){

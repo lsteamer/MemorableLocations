@@ -15,8 +15,8 @@ public class LocationData {
         this.latitude = latitude;
     }
 
-    public LocationData(String address){
-        this.address = address;
+    public LocationData(String starting){
+        this.address = starting;
         this.longitude = -1;
         this.latitude = -1;
     }
